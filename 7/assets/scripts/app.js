@@ -74,10 +74,5 @@ addModalActionBtn.onclick = () => {
             }
                       
         }
-   }
-   
-   
-   
-   
-    
+   }  
 }
