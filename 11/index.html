@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Домашнее задание №11. Классы и ООП.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="assignment.js" defer></script>
+  </head>
+  <body>
+    <h1>Домашнее задание №11. Классы и ООП.</h1>
+    <ol>
+      <li>
+        Создай класс Course с тремя свойствами: title, length и price (все создаются через конструктор).
+        Создай два экземпляра класса (придумай сам два курса). Выведи объекты в консоль.
+      </li>
+      <li>
+        Добавь два метода к классу Course:
+        1) метод, который вычисляет значение price/length ("цена минуты контента в данном курсе").
+        2) метод, который который выводит красиво общую информацию о курсе (включая title, length и price)
+        После этого вызови эти методы и выведи результаты в консоль.
+      </li>
+      <li>
+        Создай два новых класса: PracticalCourse и TheoreticalCourse.
+        Оба должны расширять класс Course, но у PracticalCourse должно быть ещё свойство numOfExercises.
+        А у TheoreticalCourse должен быть метод publish(), который просто выводит что-нибудь в консоль.
+        Создай экземляры обоих классов, и продемонстрируй использование методов и свойств этих объектов (включая унаследованные).
+      </li>
+      <li>
+        Use getters and setters to ensure that the "price" property can only be
+        set to a positive value and is returned with a "$" in front of it.
+        Используй getters и setters, чтобы убедиться, что свойство price может быть только полжительным числом
+        и возвращается с символом "$" перед суммой.
+      </li>
+      <li>
+        Используй приватные поля, чтобы никто не мог добраться до цены снаружи класса в обход getter и setter.
+      </li>
+    </ol>
+  </body>
+</html>

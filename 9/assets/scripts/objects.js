@@ -9,6 +9,7 @@ function renderCollection () {
     
     movieCollection.forEach(function(elem){
         list.innerHTML = elem.info.title + " " + elem.info.name + " " + elem.info.value;
+        console.log(elem);
     })
     ul.classList.add ('visible');
 
