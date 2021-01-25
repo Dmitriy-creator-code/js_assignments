@@ -1,17 +1,30 @@
 class Course {
+    #price = 0;
     constructor(title, length, price) {
         this.title = title
         this.length = length
-        this.price = price
+        this.#price = price
     }
     Price1Min() {
-        let price = this.price;
+        let price = this.#price;
         let length = this.length;
         let end = price/length;
-        return console.log(end + "$ " + " стоимость за одну минуту обучения");
+        return console.log('$' + end + " стоимость за одну минуту обучения");
     }
     aboutOfCourse () {
-        console.log ("Курс:" + this.title + ": " + "продолжительностью " + this.length + " минут, цена - " + this.price);
+        console.log ("Курс:" + this.title + ": " + "продолжительностью " + this.length + " минут, цена - " + this.#price);
+    }
+    get price () {
+        return this.#price;
+    }
+    set price (value) {
+        if (!parseInt(value) || (value) < 0) {
+            console.log('нужно писать число положительное');
+        } else {
+            console.log('цена введена правильно');
+        } 
+        this.#price = value;
+
     }
 }
 
@@ -19,6 +32,7 @@ let practice = new Course ("Практическое занятие", 30, 1000);
 console.log (practice);
 practice.Price1Min();
 practice.aboutOfCourse();
+console.log(practice.price);
 
 let Theory = new Course ("JavaScript", 50, 1000);
 console.log(Theory);
@@ -46,5 +60,8 @@ console.log (Practical);
 const Theoretical = new TheoreticalCourse ("JavaScript", 50, 1000);
 Theoretical.publish();
 Theoretical.aboutOfCourse();
+
+
+
 
 
