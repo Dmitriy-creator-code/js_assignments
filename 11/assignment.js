@@ -11,7 +11,7 @@ class Course {
         return console.log(end + "$ " + " стоимость за одну минуту обучения");
     }
     aboutOfCourse () {
-        console.log ("Курс:" + this.title + ": " + "продолжительностью " + this.length + "цена - " + this.price);
+        console.log ("Курс:" + this.title + ": " + "продолжительностью " + this.length + " минут, цена - " + this.price);
     }
 }
 
@@ -23,3 +23,28 @@ practice.aboutOfCourse();
 let Theory = new Course ("JavaScript", 50, 1000);
 console.log(Theory);
 Theory.Price1Min();
+Theory.aboutOfCourse();
+
+
+class PracticalCourse extends Course {
+    constructor (title, length, price, numOfExercises) {
+         super(title, length, price);
+         this.numOfExercises = numOfExercises;
+    }
+}
+
+ class TheoreticalCourse extends Course {
+    publish () {
+        console.log ("Состыковка состоялась");
+    }
+} 
+
+const Practical = new PracticalCourse ("JavaScript", 50, 1000, 1);
+console.log (Practical);
+
+
+const Theoretical = new TheoreticalCourse ("JavaScript", 50, 1000);
+Theoretical.publish();
+Theoretical.aboutOfCourse();
+
+
