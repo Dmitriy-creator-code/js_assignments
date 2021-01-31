@@ -15,7 +15,7 @@ class App {
                     btn.addEventListener('click', function(){
                         let block = document.getElementsByTagName ('body');
                         let div = document.createElement ('div');
-                        div.innerHTML = "<h4>Hello World!!!</h4>";
+                        div.innerHTML = "<h4>Задание - " + li.id + "</h4>";
                         div.setAttribute('class', 'card');
                         document.body.append(div);
                     })
