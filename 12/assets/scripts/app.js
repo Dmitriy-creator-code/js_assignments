@@ -46,6 +46,10 @@ class App {
     }
 }
 
+class Project {
+    
+}
+
 let aboutThisApp = new App("section");
 aboutThisApp.moreInfo();
 aboutThisApp.activation();
