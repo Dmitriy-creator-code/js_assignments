@@ -27,7 +27,7 @@ class Card {
 
   showMoreInfo(event) {
     const target = event.currentTarget;
-    const name = target.parentElement.getAttribute('data-extra-info');
+    const name = target.parentElement.getAttribute('data-extra-info');  //берем информацию из нестандартного атрибута
     const modal = new MoreInfoModal(name);
   }
 }
