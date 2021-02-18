@@ -47,7 +47,8 @@ class MoreInfoModal {
     this.moreInfoModal = document.createElement("div");
     this.moreInfoModal.className = "more-info-modal";
     this.moreInfoModal.innerHTML = `
-			<h2>${this.message}</h2>
+			<h2>Additional Info</h2>
+                        <p>${this.message}</p>
     `;
     this.moreInfoModal.addEventListener("click", this.closeModal.bind(this));
     document
