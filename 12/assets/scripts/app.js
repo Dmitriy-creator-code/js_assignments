@@ -2,7 +2,6 @@ class App {
     
     constructor (selector1) {
         this.section = document.querySelectorAll (selector1);
-
     }
     
     moreInfo () {
@@ -15,9 +14,17 @@ class App {
                     btn.addEventListener('click', function(){
                         let block = document.getElementsByTagName ('body');
                         let div = document.createElement ('div');
-                        div.innerHTML = "<h4>Задание - " + li.id + "</h4>";
+                        div.innerHTML = "<h4>Задание - " + li.dataset.extraInfo + "</h4>"; // изменил использование информации с помощью dataset
                         div.setAttribute('class', 'card');
-                        document.body.append(div);
+                        li.append(div);
+                        console.log(div.getBoundingClientRect());  // не использовал вычисления этого обЪекта
+                        div.addEventListener('click', function(){
+                            div.parentNode.removeChild(div);    // добавил удаление блока инфо
+                        })
+                        div.style.width = 250 + "px";
+                        div.style.height = 75 + "px";   // изменения стилей 
+                        div.style.padding = 2 + "px";
+                        div.style.fontSize = 15 + "px";
                     })
                 })
                 
@@ -46,9 +53,7 @@ class App {
     }
 }
 
-class Project {
-    
-}
+
 
 let aboutThisApp = new App("section");
 aboutThisApp.moreInfo();
