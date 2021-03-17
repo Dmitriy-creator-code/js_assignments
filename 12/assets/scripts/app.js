@@ -3,6 +3,39 @@ class App {
     constructor (selector1) {
         this.section = document.querySelectorAll (selector1);
     }
+
+    moving () {
+        
+        const list = document.querySelectorAll ('ul');
+        list.forEach(function(list){
+            const item = document.querySelectorAll ('li');
+            
+            item.forEach(function(item){
+                
+                item.addEventListener('dragstart', function(event){
+                    event.dataTransfer.setData ("text/plain", this.id);
+                    event.dataTransfer.effectAllowed = 'move';
+                })
+            })
+
+            list.addEventListener ('dragenter', function(event){
+                event.preventDefault();          
+            }) 
+            list.addEventListener ('dragover', function(event){
+                event.preventDefault();
+            })
+            list.addEventListener ('dragleave', function(event){
+                event.preventDefault();
+            })
+            list.addEventListener ('drop', function(event){
+                const linkId = event.dataTransfer.getData('text/plain');
+                document.getElementById(linkId).querySelector('button:last-child').click();
+            })
+
+        })
+
+        
+    }
     
     moreInfo () {
         this.section.forEach(function(section){
@@ -56,6 +89,8 @@ class App {
 
 
 let aboutThisApp = new App("section");
+aboutThisApp.moving();
 aboutThisApp.moreInfo();
 aboutThisApp.activation();
+
 
